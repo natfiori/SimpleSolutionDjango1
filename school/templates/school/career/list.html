@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Idiomas{% endblock %}
+
+{% block content %}
+    <h1>Idiomas</h1>
+    <p>Criar novo idioma<a href="{% url "career_create" %}">aqui</a></p>
+    {% for career in careers %}
+        <div>
+            <p class="title"><a href="{% url "career_detail" career.id %}">{{ career.name }}</a></p>
+        </div>
+    {% endfor %}
+{% endblock %}

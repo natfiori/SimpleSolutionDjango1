@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Editar turma% endblock %}
+
+{% block content %}
+    <h1>Editando turma{{ subject.name }}</h1>
+    <form action="." method="post" enctype="multipart/form-data">
+        {{ subject_form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" value="Editar Turma"></p>
+    </form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Criar Idioma{% endblock %}
+
+{% block content %}
+    <h1>Criar Idioma</h1>
+    <p>Por favor, insira os dados solicitados:</p>
+    <form action="." method="post">
+        {{ career_form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" value="Criar Idioma"></p>
+    </form>
+{% endblock %}

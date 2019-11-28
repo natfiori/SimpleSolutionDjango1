@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Detalhes de turmas{% endblock %}
+
+{% block content %}
+    <h1><a href="{% url "subject_edit" subject.id %}">{{ subject.name }}</a></h1>
+    <p>Nome: {{ subject.name }}</p>
+    <p>Código: {{ subject.code }}</p>
+    <p></p>
+    <h2>Professores</h2>
+    {% for professor in subject.professors.all %}
+        <p><a href="{% url "professor_detail" professor.pk %}">{{ professor.name }}</a></p>
+    {% endfor %}
+    <h2>Alunos</h2>
+    {% for student in subject.student.all %}
+        <p><a href="{% url "student_detail" student.pk %}">{{ student.name }}</a></p>
+    {% endfor %}
+{% endblock %}
