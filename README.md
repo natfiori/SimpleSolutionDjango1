@@ -1,0 +1,1 @@
+# SimpleSolutionDjango1
